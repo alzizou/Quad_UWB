@@ -1,0 +1,6 @@
+<launch>
+	<node name="distance_collection" pkg="coop_con_loc" type="distance_collection.py" output="screen" />
+	<node name="localization_main" pkg="coop_con_loc" type="localization_main" output="screen" />
+	<node name="absolute_velocity" pkg="coop_con_loc" type="absolute_velocity.py" output="screen" />
+	<node name="px4_communication" pkg="coop_con_loc" type="px4_communication.py" output="screen" />
+</launch>

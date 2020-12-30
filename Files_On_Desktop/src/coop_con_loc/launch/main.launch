@@ -1,0 +1,5 @@
+<launch>
+	<node name="drone_connection" pkg="coop_con_loc" type="Connect2Drone.py" output="screen" />
+	<node name="localization" pkg="coop_con_loc" type="localization_main.py" output="screen" />
+	<node name="absolute_velocity" pkg="coop_con_loc" type="absolute_velocity.py" output="screen" />
+</launch>

@@ -1,0 +1,2 @@
+coop_con_loc
+-DCATKIN_DEVEL_PREFIX=/home/ali/My_Localization_Folder/testing-dwm1001-dev-modules/Files_On_Desktop/devel -DCMAKE_INSTALL_PREFIX=/home/ali/My_Localization_Folder/testing-dwm1001-dev-modules/Files_On_Desktop/install -G Unix Makefiles

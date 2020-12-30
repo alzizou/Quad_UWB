@@ -1,0 +1,46 @@
+FROM __BASEIMAGE_ARCH__/ros:melodic-ros-core-bionic
+__CROSS_COPY qemu-__QEMU_ARCH__-static /usr/bin
+
+# ------------- OTHER TOOLS INSTALLATION ---------- #
+
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt update && apt install --no-install-recommends -y \
+    python3-pip \
+    python3-serial \
+    python3-dev \
+    python-future \ 
+    libxml2-dev \
+    libxslt-dev \
+    python-ipaddress \
+    iproute2 \
+    wireless-tools \
+    iptables \
+    python3-numpy \
+    curl \
+    gcc \
+    g++ \
+    python3-termcolor
+
+RUN pip3 install --upgrade pip
+RUN pip3 install wheel
+RUN pip3 install setuptools
+RUN pip3 install mavproxy
+RUN pip3 install Cython
+RUN pip3 install rospkg
+RUN pip3 install catkin_pkg
+RUN rm -rf /var/lib/apt/lists/*
+
+# ----------------- ROS WORKSPACE ----------------- #
+
+WORKDIR /root
+COPY catkin_ws/src/coop_con_loc_practice/Files_On_RPi/coop_con_loc_RPi ./coop_con_loc_RPi
+WORKDIR /root/coop_con_loc_RPi
+RUN ["/bin/bash", "-c", "source /opt/ros/melodic/setup.bash &&  catkin_make"]
+
+# ----------------- RUN THE CODE ------------------ #
+
+COPY entrypoint_RPi.sh /.
+RUN chmod +x /entrypoint_RPi.sh
+RUN chmod +x /root/coop_con_loc_RPi/src/coop_con_loc/src/*.py
+ENTRYPOINT ["/entrypoint_RPi.sh"]
+CMD ["bash"]

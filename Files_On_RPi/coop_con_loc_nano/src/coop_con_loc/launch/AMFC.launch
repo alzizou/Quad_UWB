@@ -1,0 +1,59 @@
+<launch>
+
+    <!--Parsing Argument-->
+
+    <!--AMFC Gains for position-->
+    <arg name="Q_p" default="1.0" />
+    <arg name="Gamma1_p" default="0.0001" />
+    <arg name="Gamma2_p" default="0.0001" />
+    <arg name="rho1_p" default="1.0" />
+    <arg name="rho2_p" default="1.0" />
+
+    <!--AMFC Gains for velocity-->
+    <arg name="Q_v" default="1.0" />
+    <arg name="Gamma1_v" default="10.0" />
+    <arg name="Gamma2_v" default="1.0" />
+    <arg name="rho1_v" default="1.0" />
+    <arg name="rho2_v" default="1.0" />
+
+    <!--Setpoints-->
+    <arg name="xd_StP" default="3.0" />
+    <arg name="yd_StP" default="-2.0" />
+    <arg name="zd_StP" default="-0.5" />
+
+    <arg name="pitch_bias" default="0.0" />
+    <arg name="roll_bias" default="0.03" />
+
+    <!--Running nodes-->
+	<node name="distance_collection" pkg="coop_con_loc" type="distance_collection.py" output="screen" />
+	<node name="localization" pkg="coop_con_loc" type="localization_main.py" output="screen" />
+	<node name="absolute_velocity" pkg="coop_con_loc" type="absolute_velocity.py" output="screen" />
+
+	<node name="controller" pkg="coop_con_loc" type="controller_AMFC.py" output="screen" >
+        
+	<!--AMFC Gains position-->
+	<param name="Q_p" value="$(arg Q_p)" />
+	<param name="Gamma1_p" value="$(arg Gamma1_p)" />
+	<param name="Gamma2_p" value="$(arg Gamma2_p)" />
+	<param name="rho1_p" value="$(arg rho1_p)" />
+	<param name="rho2_p" value="$(arg rho2_p)" />
+
+	<!--AMFC Gains velocity-->
+	<param name="Q_v" value="$(arg Q_v)" />
+	<param name="Gamma1_v" value="$(arg Gamma1_v)" />
+	<param name="Gamma2_v" value="$(arg Gamma2_v)" />
+	<param name="rho1_v" value="$(arg rho1_v)" />
+	<param name="rho2_v" value="$(arg rho2_v)" />
+
+        <!--Setpoints-->
+        <param name="xd_StP" value="$(arg xd_StP)" />
+        <param name="yd_StP" value="$(arg yd_StP)" />
+        <param name="zd_StP" value="$(arg zd_StP)" />
+
+        <param name="pitch_bias" value="$(arg pitch_bias)" />
+        <param name="roll_bias" value="$(arg roll_bias)" />
+
+    </node>
+
+	<node name="px4_communication" pkg="coop_con_loc" type="px4_communication.py" output="screen" />
+</launch>

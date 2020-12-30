@@ -1,0 +1,60 @@
+<!DOCTYPE CrossStudio_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints"/>
+ <ExecutionProfileWindow/>
+ <FrameBufferWindow>
+  <FrameBufferWindow bufferHeight="-1" addressSpace="" addressText="" bufferWidth="-1"/>
+ </FrameBufferWindow>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
+ <Project>
+  <ProjectSessionItem path="ds_twr_init"/>
+  <ProjectSessionItem path="ds_twr_init;ds_twr_init"/>
+  <ProjectSessionItem path="ds_twr_init;ds_twr_init;Application"/>
+  <ProjectSessionItem path="ds_twr_init;ds_twr_init;Board Definition"/>
+  <ProjectSessionItem path="ds_twr_init;ds_twr_init;Board Support"/>
+  <ProjectSessionItem path="ds_twr_init;ds_twr_init;Config"/>
+  <ProjectSessionItem path="ds_twr_init;ds_twr_init;Decadriver"/>
+  <ProjectSessionItem path="ds_twr_init;ds_twr_init;Freertos"/>
+  <ProjectSessionItem path="ds_twr_init;ds_twr_init;Internal Files"/>
+  <ProjectSessionItem path="ds_twr_init;ds_twr_init;nRF_Drivers"/>
+  <ProjectSessionItem path="ds_twr_init;ds_twr_init;nRF_Libraries"/>
+  <ProjectSessionItem path="ds_twr_init;ds_twr_init;nRF_Log"/>
+  <ProjectSessionItem path="ds_twr_init;ds_twr_init;nRF_Segger_RTT"/>
+  <ProjectSessionItem path="ds_twr_init;ds_twr_init;Uart"/>
+ </Project>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
+ <Threads>
+  <ThreadsWindow showLists=""/>
+ </Threads>
+ <TraceWindow>
+  <Trace enabled="Yes"/>
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never"/>
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never"/>
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never"/>
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never"/>
+ </Watch4>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="66" useTextEdit="1" useBinaryEdit="0" left="0" path="../main.c" selected="0" top="50" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="35" y="29" useTextEdit="1" useBinaryEdit="0" left="0" path="../ss_init_main.c" selected="1" top="10" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="32" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../deca_driver/port/port_platform.h" selected="0" top="29" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="589" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../deca_driver/deca_device_api.h" selected="0" top="573" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="2534" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../deca_driver/deca_device.c" selected="0" top="2518" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="12" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_14.2.0/components/libraries/uart/retarget.c" selected="0" top="0" codecName="Default"/>
+ </Files>
+ <ARMCrossStudioWindow activeProject="ds_twr_init" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="nrf52832_xxaa" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>
+</session>

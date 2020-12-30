@@ -1,0 +1,8 @@
+prefix=/home/ali/My_Localization_Folder/testing-dwm1001-dev-modules/Files_On_Desktop/devel
+
+Name: coop_con_loc
+Description: Description of coop_con_loc
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
